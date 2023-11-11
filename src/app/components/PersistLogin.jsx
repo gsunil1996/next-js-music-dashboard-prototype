@@ -19,8 +19,7 @@ const PersistLogin = ({ children }) => {
     isUninitialized,
     isLoading,
     isSuccess,
-    isError,
-    error
+    isError
   }] = useRefreshMutation()
 
   useEffect(() => {

@@ -10,8 +10,6 @@ import Container from '@mui/material/Container';
 import { useTheme } from '@mui/material/styles';
 import Link from 'next/link';
 
-
-
 const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 const HomePage = () => {
