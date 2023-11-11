@@ -30,7 +30,6 @@ export default function SignUp() {
     setFormValues({ ...formValues, [name]: value });
   };
 
-
   const handleSubmit = (event) => {
     event.preventDefault();
     register({ username: formValues.name, email: formValues.email, password: formValues.password });

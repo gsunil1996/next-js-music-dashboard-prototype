@@ -13,14 +13,15 @@ import {
   TableRow,
 } from "@mui/material";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDeleteUserMutation, useLazyGetUsersQuery } from "../redux/features/users/usersApiSlice";
+import AddnewUser from "./AddnewUser";
 
 const Admin = () => {
 
   const router = useRouter()
 
-  const [getUsers, { data, isFetching, isSuccess, isError, error }] = useLazyGetUsersQuery()
+  const [getUsers, { data, isFetching, isSuccess, isError, error }] = useLazyGetUsersQuery();
 
   useEffect(() => {
     getUsers()
@@ -69,12 +70,27 @@ const Admin = () => {
     }
   }, [isDelSuccess, isDelError]);
 
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
   return (
     <div>
       <div style={{ textAlign: "center" }} >
         <h1 style={{ marginBottom: "5px", marginTop: "5px" }}>List of Users</h1>
       </div>
       <hr />
+      <div style={{ width: "95%", margin: "auto", display: "flex", justifyContent: "flex-end", marginTop: "10px" }} >
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleClickOpen}
+        >
+          Add New User
+        </Button>
+      </div>
       <div>
         {isFetching ? (
           <div
@@ -192,6 +208,11 @@ const Admin = () => {
           ""
         )}
       </div>
+
+      <AddnewUser
+        open={open}
+        setOpen={setOpen}
+      />
     </div>
   );
 }
