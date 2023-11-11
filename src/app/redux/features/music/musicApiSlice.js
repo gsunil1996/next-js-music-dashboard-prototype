@@ -60,13 +60,6 @@ export const musicApiSlice = apiSlice.injectEndpoints({
         url: `/music/delete-music/${id}`,
         method: "DELETE",
       }),
-      invalidatesTags: (result, error, arg) => {
-        // console.log("arg", arg);
-        return [
-          { type: "Music", id: arg },
-          { type: "Music", id: "LIST" },
-        ];
-      },
     }),
   }),
 });
@@ -74,6 +67,7 @@ export const musicApiSlice = apiSlice.injectEndpoints({
 export const {
   useLazyGetMusicQuery,
   useLazyGetMusicByIdQuery,
+  useGetMusicByIdQuery,
   useAddMusicMutation,
   useDeleteMusicMutation,
   useEditMusicMutation,
