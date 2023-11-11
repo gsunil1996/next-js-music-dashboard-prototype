@@ -5,7 +5,7 @@ import { useRef } from "react";
 import { useState } from "react";
 import { useRefreshMutation } from "../redux/features/auth/authApiSlice";
 import { useEffect } from "react";
-import Link from "next/link";
+import { redirect } from "next/navigation";
 
 
 const PersistLogin = ({ children }) => {
@@ -48,19 +48,18 @@ const PersistLogin = ({ children }) => {
     // eslint-disable-next-line
   }, [])
 
+  useEffect(() => {
+    if (isError) {
+      redirect("/login")
+    }
+  }, [isError])
+
   let content
   if (isLoading) { // token: no
     //  console.log('loading')
     content = <p>Loading...</p>
-  } else if (isError) { // token: no
-    //   console.log('error')
-    content = (
-      <p className='errmsg'>
-        {`${error.data?.message} - `}
-        <Link href="/login">Please login again</Link>.
-      </p>
-    )
-  } else if (isSuccess && trueSuccess) { // token: yes
+  }
+  else if (isSuccess && trueSuccess) { // token: yes
     //  console.log('success')
     content = children
   } else if (token && isUninitialized) { //, token: yes
