@@ -35,7 +35,7 @@ const Login = () => {
       setPassword('')
       alert("You are logged in");
       reset()
-      redirect('/')
+      redirect('/dashboard')
     }
     if (isError) {
       alert(error?.data?.message)
@@ -46,7 +46,7 @@ const Login = () => {
 
   useEffect(() => {
     if (token) {
-      redirect("/")
+      redirect("/dashboard")
     }
   }, [token])
 

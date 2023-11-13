@@ -11,9 +11,9 @@ import { selectCurrentToken } from "@/app/redux/features/auth/authSlice";
 
 const menuItems = [
   {
-    name: "Home",
+    name: "Dashboard",
     exact: true,
-    to: "/",
+    to: "/dashboard",
   },
   {
     name: "Admin",
@@ -50,7 +50,7 @@ const Sidebar = () => {
       setActiveIndex(foundIndex);
     }
 
-    if (pathname.toLowerCase() == "/login" || pathname.toLowerCase() == "/signup" || pathname.toLowerCase() == "/unauthorized") {
+    if (pathname.toLowerCase() == "/" || pathname.toLowerCase() == "/login" || pathname.toLowerCase() == "/signup" || pathname.toLowerCase() == "/unauthorized") {
       setShow(false);
     } else {
       setShow(true);
@@ -98,7 +98,7 @@ const Sidebar = () => {
               key={index}
               onClick={() => setActiveIndex(index)}
             >
-              {(menuItem.name === "Home" || (roles.some((role) => role.toLowerCase() === menuItem.name.toLowerCase()))) && (
+              {(menuItem.name === "Dashboard" || (roles.some((role) => role.toLowerCase() === menuItem.name.toLowerCase()))) && (
                 <Link
                   style={{ textDecoration: "none", color: "#fff" }}
                   href={menuItem.to}
