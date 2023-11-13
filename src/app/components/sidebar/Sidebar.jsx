@@ -18,17 +18,17 @@ const menuItems = [
   {
     name: "Admin",
     exact: true,
-    to: "/admin",
+    to: "/dashboard/admin",
   },
   {
     name: "Creator",
     exact: true,
-    to: `/creator`,
+    to: `/dashboard/creator`,
   },
   {
     name: "User",
     exact: true,
-    to: `/user`,
+    to: `/dashboard/user`,
   },
 
 ];

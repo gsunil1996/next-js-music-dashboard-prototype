@@ -1,6 +1,6 @@
 "use client"
 
-import { useLazyGetUserByIdQuery, useUpdateUserMutation } from "../../redux/features/users/usersApiSlice";
+import { useLazyGetUserByIdQuery, useUpdateUserMutation } from "../../../redux/features/users/usersApiSlice";
 import { Button, LinearProgress } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useTheme } from '@mui/material/styles';
@@ -95,7 +95,7 @@ const EditUser = ({ params }) => {
   return (
     <div>
       <div style={{ display: "flex", justifyContent: "center", padding: "5px" }}>
-        <Button variant="contained" onClick={() => router.push("/admin")}>
+        <Button variant="contained" onClick={() => router.push("/dashboard/admin")}>
           Go to admin page
         </Button>
       </div>

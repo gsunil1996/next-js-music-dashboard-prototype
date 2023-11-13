@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { useDeleteUserMutation, useLazyGetUsersQuery } from "../redux/features/users/usersApiSlice";
+import { useDeleteUserMutation, useLazyGetUsersQuery } from "../../redux/features/users/usersApiSlice";
 import AddnewUser from "./AddnewUser";
 
 const Admin = () => {
@@ -178,7 +178,7 @@ const Admin = () => {
                                     variant="contained"
                                     color="secondary"
                                     onClick={() =>
-                                      router.push(`/admin/${row._id}`)
+                                      router.push(`/dashboard/admin/${row._id}`)
                                     }
                                   >
                                     View User

@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState } from "react";
-import { useLazyFetchBreedsQuery } from "../redux/features/pets/petsSlice";
+import { useLazyFetchBreedsQuery } from "../../redux/features/pets/petsSlice";
 
 const User = () => {
   const [numOfDogs, setNumberOfDogs] = useState(10);

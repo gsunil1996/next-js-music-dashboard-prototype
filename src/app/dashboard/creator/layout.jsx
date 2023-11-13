@@ -1,6 +1,6 @@
 import React from 'react'
-import RequireAuth from '../components/RequireAuth'
-import PersistLogin from '../components/PersistLogin'
+import RequireAuth from '../../components/RequireAuth'
+import PersistLogin from '../../components/PersistLogin'
 
 const Layout = ({ children }) => {
   return (

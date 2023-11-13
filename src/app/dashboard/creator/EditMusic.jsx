@@ -4,7 +4,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogTitle from "@mui/material/DialogTitle";
 import CancelIcon from "@mui/icons-material/Cancel";
 import { Box, Button, CircularProgress, Grid, LinearProgress, TextField } from "@mui/material";
-import { useEditMusicMutation, useGetMusicByIdQuery } from "../redux/features/music/musicApiSlice";
+import { useEditMusicMutation, useGetMusicByIdQuery } from "../../redux/features/music/musicApiSlice";
 
 const EditMusic = (props) => {
 

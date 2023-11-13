@@ -1,12 +1,12 @@
 "use client"
 
 import { Box, Button, Container, Divider, Grid, TextField } from "@mui/material";
-import { useRegisterMutation } from "../redux/features/auth/authApiSlice";
+import { useRegisterMutation } from "../../redux/features/auth/authApiSlice";
 import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useLazyGetUsersQuery } from "../redux/features/users/usersApiSlice";
+import { useLazyGetUsersQuery } from "../../redux/features/users/usersApiSlice";
 
 const AddnewUser = (props) => {
 

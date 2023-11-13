@@ -15,7 +15,7 @@ import TextField from "@mui/material/TextField";
 import Pagination from "@mui/material/Pagination";
 import UploadMusic from "./UploadMusic";
 import EditMusic from "./EditMusic";
-import { useDeleteMusicMutation, useLazyGetMusicQuery } from "../redux/features/music/musicApiSlice";
+import { useDeleteMusicMutation, useLazyGetMusicQuery } from "../../redux/features/music/musicApiSlice";
 
 const columns = [
   {
